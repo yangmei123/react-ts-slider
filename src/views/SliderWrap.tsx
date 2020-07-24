@@ -53,7 +53,7 @@ class SliderWrap extends Component<Props, State> { // 用类的方式创建组�
     clearInterval(this.state.timerID);
   }
 
-  sliderStart() {
+  private sliderStart() {
     const timerID = setInterval(() => {
       const { state: { imageData, activeIndex}} = this;
       this.setState({ activeIndex: activeIndex === imageData.length - 1 ? 0 : activeIndex + 1});
@@ -61,7 +61,7 @@ class SliderWrap extends Component<Props, State> { // 用类的方式创建组�
     this.setState({ timerID })
   }
 
-  handleItemChange(item: { [key: string]: number} | string) {
+  private handleItemChange(item: { [key: string]: number} | string) {
     const { state: { imageData, activeIndex, timerID}} = this;
     let isPrev = item === 'prev';
     let index = activeIndex;
